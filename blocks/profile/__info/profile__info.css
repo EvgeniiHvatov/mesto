@@ -1,0 +1,8 @@
+.profile__info {
+  display: grid;
+  color: white;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 18px 16px;
+  align-self: center;
+}
