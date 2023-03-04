@@ -6,3 +6,13 @@
   gap: 18px 16px;
   align-self: center;
 }
+
+
+@media screen and (max-width: 767px) {
+  .profile__info {
+    justify-items: end;
+    align-self: center;
+    gap: 13px 10px;
+  }
+
+}
