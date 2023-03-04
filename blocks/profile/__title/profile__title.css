@@ -4,6 +4,7 @@
   font-weight: 500;
   line-height: 1.14;
   margin: 0;
+  grid-area: title;
 }
 
 @media screen and (max-width: 1023px) {
@@ -15,7 +16,7 @@
 
 @media screen and (max-width: 767px) {
   .profile__title {
-    margin-top: 22px;
+    /* margin-top: 22px; */
     /* margin-bottom: 14px; */
     font-size: 27px;
     line-height: 1.22;

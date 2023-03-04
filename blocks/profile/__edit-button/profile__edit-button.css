@@ -9,6 +9,7 @@
   cursor: pointer;
   border: 1px solid #FFF;
   padding: 0;
+  grid-area: button;
 }
 
 @media screen and (max-width: 767px) {
