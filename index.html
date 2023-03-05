@@ -13,11 +13,11 @@
     </header>
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar"></div>
+        <img src="./images/avatar.jpg" alt="Ваше фото (аватарка)" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
-          <button class="profile__edit-button"></button>
+          <button type="button" class="profile__edit-button"></button>
         </div>
         <button type="button" class="profile__add-button"></button>
       </section>
@@ -26,66 +26,69 @@
           <li class="places__item">
             <img src="./images/karachaevsk.jpg" alt="Старинное здание в горах" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Карачаевск</p>
+              <h2 class="places__text">Карачаевск</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
           <li class="places__item">
             <img src="./images/mount_elbrus.jpg" alt="Вид на гору из далека" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Гора Эльбрус</p>
+              <h2 class="places__text">Гора Эльбрус</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
           <li class="places__item">
             <img src="./images/dombai.jpg" alt="Вид на гору за холмом" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Домбай</p>
+              <h2 class="places__text">Домбай</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
           <li class="places__item">
             <img src="./images/mount_elbrus.jpg" alt="Вид на гору из далека" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Гора Эльбрус</p>
+              <h2 class="places__text">Гора Эльбрус</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
           <li class="places__item">
             <img src="./images/dombai.jpg" alt="Вид на гору за холмом" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Домбай</p>
+              <h2 class="places__text">Домбай</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
           <li class="places__item">
             <img src="./images/karachaevsk.jpg" alt="Старинное здание в горах" class="places__image">
             <div class="places__heading">
-              <p class="places__text">Карачаево-Черкесия</p>
+              <h2 class="places__text">Карачаево-Черкесия</h2>
               <button type="button" class="places__like"></button>
             </div>
           </li>
         </ul>
       </section>
-      <div class="popup">
-        <div class="popup__container">
-          <div class="popup__close"></div>
-          <h2 class="popup__heading">Редактировать профиль</h2>
-          <form class="popup__form">
-            <fieldset class="popup__field">
-              <input class="popup__text" placeholder="Имя" type="text">
-            </fieldset>
-            <fieldset class="popup__field">
-              <input class="popup__about" placeholder="О себе" type="text">
-            </fieldset>
-            <button class="popup__submit" type="submit">Сохранить</button>
-          </form>
-        </div>
-      </div>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&COPY; 2023 Хватов Евгений</p>
     </footer>
-    <script src="./scripts/script.js"></script>
+    <div class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form class="popup__form" name="edit-profile">
+          <input class="popup__input popup__input_text" name="firstname" placeholder="Имя" type="text">
+          <input class="popup__input popup__input_about" name="about" placeholder="О себе" type="text">
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
+
+<!--
+<form class="popup__form">
+  <input class="popup__text" placeholder="Имя" type="text">
+  <input class="popup__about" placeholder="О себе" type="text">
+  <button class="popup__submit" type="submit">Сохранить</button>
+</form> -->

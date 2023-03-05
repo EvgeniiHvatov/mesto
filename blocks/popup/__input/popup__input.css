@@ -1,4 +1,4 @@
-/* .popup__about {
+.popup__input {
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -7,6 +7,8 @@
   width: 100%;
   color: #000;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin-top: 0;
   outline: none;
   padding: 0 0 13px 0;
-} */
+  /* margin-bottom: 30px; */
+}
