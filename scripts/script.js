@@ -1,6 +1,5 @@
 let popup = document.querySelector('.popup');
 let profile = document.querySelector('.profile');
-let popupContainer = document.querySelector('.popup__container');
 
 let openPopupButton = profile.querySelector('.profile__edit-button');
 let closePopupButton = popup.querySelector('.popup__close');
@@ -34,3 +33,4 @@ function handleFormSubmit(evt) {
 }
 
 popupForm.addEventListener('submit', handleFormSubmit);
+

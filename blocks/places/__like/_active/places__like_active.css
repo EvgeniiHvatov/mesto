@@ -1,0 +1,9 @@
+.places__like_active {
+  width: 22px;
+  height: 19px;
+  border: 0;
+  background-image: url(../../../images/.places__like_active.svg);
+  background-repeat: no-repeat;
+  background-color: #fff;
+  cursor: pointer;
+}

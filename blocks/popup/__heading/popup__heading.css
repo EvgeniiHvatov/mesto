@@ -7,3 +7,10 @@
   color: black;
   margin-bottom: 54px;
 }
+
+@media screen and (max-width: 767px) {
+  .popup__heading {
+    font-size: 18px;
+    margin-bottom: 75px;
+  }
+}
