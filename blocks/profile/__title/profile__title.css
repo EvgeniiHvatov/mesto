@@ -5,6 +5,7 @@
   line-height: 1.14;
   margin: 0;
   grid-area: title;
+  max-width: 336px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
