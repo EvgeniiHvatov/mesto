@@ -6,7 +6,7 @@
     "subtitle subtitle";
   grid-template-columns: max-content 20px;
   grid-template-rows: auto 1fr;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 10px 19px;
   align-self: center;
 }
