@@ -1,12 +1,6 @@
 .places__heading {
   display: flex;
   justify-content: space-between;
-  margin: 25px 20px 31px 21px;
+  margin: 25px 20px 25px 21px;
   align-items: center;
-}
-
-@media screen and (max-width: 767px) {
-  .places__heading {
-    margin: 25px 20px 25px 21px;
-  }
 }
