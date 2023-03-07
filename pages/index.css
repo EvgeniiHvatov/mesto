@@ -36,3 +36,6 @@
 @import url(../blocks/popup/__submit/popup__submit.css);
 
 
+* {
+  outline: 1px solid yellowgreen ;
+}
