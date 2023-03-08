@@ -7,8 +7,8 @@ let closePopupButton = popup.querySelector('.popup__close');
 let profileTitle = profile.querySelector('.profile__title');
 let profileSubtitle = profile.querySelector('.profile__subtitle');
 
-let inputText = popup.querySelector('.popup__input_text');
-let inputAbout = popup.querySelector('.popup__input_about');
+let inputText = popup.querySelector('.popup__input_text_name');
+let inputAbout = popup.querySelector('.popup__input_text_about');
 
 let popupForm = popup.querySelector('.popup__form');
 
