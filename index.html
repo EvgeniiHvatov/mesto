@@ -23,7 +23,7 @@
       </section>
       <section class="places">
         <ul class="places__list">
-          <li class="places__item">
+          <!-- <li class="places__item">
             <img src="./images/karachaevsk.jpg" alt="Старинное здание в горах" class="places__image">
             <div class="places__heading">
               <h2 class="places__text">Карачаевск</h2>
@@ -64,13 +64,22 @@
               <h2 class="places__text">Карачаево-Черкесия</h2>
               <button type="button" class="places__like"></button>
             </div>
-          </li>
+          </li> -->
         </ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&COPY; 2023 Хватов Евгений</p>
     </footer>
+    <template id="card">
+      <li class="places__item">
+        <img class="places__image">
+        <div class="places__heading">
+          <h2 class="places__text"></h2>
+          <button type="button" class="places__like"></button>
+        </div>
+      </li>
+    </template>
     <div class="popup">
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
