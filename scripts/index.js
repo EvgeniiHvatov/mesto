@@ -69,7 +69,7 @@ initialCards.forEach((function cCard(element) {
   const cardElement = cardTemplate.querySelector('.places__item').cloneNode(true);
 
   cardElement.querySelector('.places__image').src = element.link;
-  cardElement.querySelector('.places__image').alt = 'Старинное здание в горах';
+  cardElement.querySelector('.places__image').alt = element.name;
   cardElement.querySelector('.places__text').textContent = element.name;
 
   placesList.append(cardElement);
