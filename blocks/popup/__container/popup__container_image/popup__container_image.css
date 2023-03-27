@@ -7,6 +7,5 @@
   max-height: 75vh;
   width: auto;
   overflow: visible;
-  width: fit-content;
   object-fit: cover;
 }
