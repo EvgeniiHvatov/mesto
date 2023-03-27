@@ -22,50 +22,7 @@
         <button type="button" class="profile__add-button"></button>
       </section>
       <section class="places">
-        <ul class="places__list">
-          <!-- <li class="places__item">
-            <img src="./images/karachaevsk.jpg" alt="Старинное здание в горах" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Карачаевск</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li>
-          <li class="places__item">
-            <img src="./images/mount_elbrus.jpg" alt="Вид на гору из далека" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Гора Эльбрус</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li>
-          <li class="places__item">
-            <img src="./images/dombai.jpg" alt="Вид на гору за холмом" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Домбай</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li>
-          <li class="places__item">
-            <img src="./images/mount_elbrus.jpg" alt="Вид на гору из далека" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Гора Эльбрус</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li>
-          <li class="places__item">
-            <img src="./images/dombai.jpg" alt="Вид на гору за холмом" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Домбай</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li>
-          <li class="places__item">
-            <img src="./images/karachaevsk.jpg" alt="Старинное здание в горах" class="places__image">
-            <div class="places__heading">
-              <h2 class="places__text">Карачаево-Черкесия</h2>
-              <button type="button" class="places__like"></button>
-            </div>
-          </li> -->
-        </ul>
+        <ul class="places__list"></ul>
       </section>
     </main>
     <footer class="footer">
@@ -73,14 +30,17 @@
     </footer>
     <template id="card">
       <li class="places__item">
-        <img class="places__image">
+        <button type="button" class="places__delete-card"></button>
+        <div class="places__image-container">
+          <img class="places__image">
+        </div>
         <div class="places__heading">
           <h2 class="places__text"></h2>
           <button type="button" class="places__like"></button>
         </div>
       </li>
     </template>
-    <div class="popup">
+    <div class="popup popup_edit-profile">
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <h2 class="popup__heading">Редактировать профиль</h2>
@@ -91,13 +51,24 @@
         </form>
       </div>
     </div>
+    <div class="popup popup_add-card">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__heading">Новое место</h2>
+        <form class="popup__form" name="add-card">
+          <input class="popup__input popup__input_text_name-place" name="nameplace" placeholder="Название" type="text">
+          <input class="popup__input popup__input_text_image-link" name="imagelink" placeholder="Ссылка на картинку" type="text">
+          <button class="popup__submit" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_full-image">
+      <div class="popup__container popup__container_image">
+        <button type="button" class="popup__close"></button>
+        <img class="popup__image popup__image_full">
+        <h2 class="popup__heading popup__heading_caption"></h2>
+      </div>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
-
-<!--
-<form class="popup__form">
-  <input class="popup__text" placeholder="Имя" type="text">
-  <input class="popup__about" placeholder="О себе" type="text">
-  <button class="popup__submit" type="submit">Сохранить</button>
-</form> -->
