@@ -47,6 +47,7 @@ const closePopupButtonAddCard = popupAddCard.querySelector('.popup__close');
 
 
 
+
 initialCards.forEach(function (element) {
   createCard(element);
 });
@@ -83,11 +84,31 @@ closePopupProfile.addEventListener('click', function() {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupPressEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupPressEsc);
 }
+
+function closePopupPressEsc(evt) {
+  const popupOpened = document.querySelector('.popup_opened')
+  if(evt.key ==='Escape'){
+    closePopup(popupOpened);
+  };
+}
+
+
+document.addEventListener('mousedown', function (evt) {
+  if (evt.target.classList.contains('popup')) {
+    closePopup(popupProfile);
+    closePopup(popupAddCard);
+    closePopup(popupFullImage);
+  }
+});
+
+
 
 function initAddCard() {
   const openPopupButtonAddCard = profile.querySelector('.profile__add-button');

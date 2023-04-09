@@ -44,10 +44,12 @@
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <h2 class="popup__heading">Редактировать профиль</h2>
-        <form class="popup__form" name="edit-profile">
-          <input class="popup__input popup__input_text_name" name="firstname" placeholder="Имя" type="text">
-          <input class="popup__input popup__input_text_about" name="about" placeholder="О себе" type="text">
-          <button class="popup__submit" type="submit">Сохранить</button>
+        <form class="popup__form" name="edit-profile" novalidate>
+          <input class="popup__input popup__input_text_name" id="firstname" name="firstname" placeholder="Имя" type="text" required minlength="2" maxlength="40">
+          <span class="popup__error" id="firstname-error"></span>
+          <input class="popup__input popup__input_text_about" id="about" name="about" placeholder="О себе" type="text" required minlength="2" maxlength="200">
+          <span class="popup__error" id="about-error"></span>
+          <button class="popup__submit popup__submit_disabled" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
@@ -55,10 +57,12 @@
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <h2 class="popup__heading">Новое место</h2>
-        <form class="popup__form" name="add-card">
-          <input class="popup__input popup__input_text_name-place" name="nameplace" placeholder="Название" type="text">
-          <input class="popup__input popup__input_text_image-link" name="imagelink" placeholder="Ссылка на картинку" type="text">
-          <button class="popup__submit" type="submit">Создать</button>
+        <form class="popup__form" name="add-card" novalidate>
+          <input class="popup__input popup__input_text_name-place" id="nameplace" name="nameplace" placeholder="Название" type="text" required minlength="2" maxlength="30">
+          <span class="popup__error" id="nameplace-error"></span>
+          <input class="popup__input popup__input_text_image-link" id="imagelink" name="imagelink" placeholder="Ссылка на картинку" type="url">
+          <span class="popup__error" id="imagelink-error"></span>
+          <button class="popup__submit popup__submit_disabled" type="submit">Создать</button>
         </form>
       </div>
     </div>
@@ -69,6 +73,7 @@
         <h2 class="popup__heading popup__heading_caption"></h2>
       </div>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
