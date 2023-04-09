@@ -1,30 +1,3 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 const profile = document.querySelector('.profile');
 const openPopupButton = profile.querySelector('.profile__edit-button');
 
@@ -99,7 +72,6 @@ function closePopupPressEsc(evt) {
   };
 }
 
-
 document.addEventListener('mousedown', function (evt) {
   if (evt.target.classList.contains('popup')) {
     closePopup(popupProfile);
@@ -107,8 +79,6 @@ document.addEventListener('mousedown', function (evt) {
     closePopup(popupFullImage);
   }
 });
-
-
 
 function initAddCard() {
   const openPopupButtonAddCard = profile.querySelector('.profile__add-button');

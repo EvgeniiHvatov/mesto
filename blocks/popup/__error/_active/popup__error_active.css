@@ -1,3 +1,8 @@
 .popup__error_active {
   display: block;
+  margin-bottom: 13px;
+}
+
+.popup__error_active:last-of-type {
+  margin-bottom: 31px;
 }
