@@ -1,16 +1,15 @@
+import {initialCards} from './initialCards.js';
+import Card from "./card.js";
+import FormValidator from "./FormValidator.js";
+
 const profile = document.querySelector('.profile');
 const openPopupButton = profile.querySelector('.profile__edit-button');
 
 const profileTitle = profile.querySelector('.profile__title');
 const profileSubtitle = profile.querySelector('.profile__subtitle');
-
-const cardTemplate = document.querySelector('#card').content;
 const placesList = document.querySelector('.places__list');
 
 const popupFullImage = document.querySelector('.popup_full-image');
-const elementFullImage = popupFullImage.querySelector('.popup__image');
-const elementFullImageTitle = popupFullImage.querySelector('.popup__heading');
-
 const popupProfile = document.querySelector('.popup_edit-profile');
 const popupAddCard = document.querySelector('.popup_add-card');
 
@@ -18,12 +17,14 @@ const closeImage = popupFullImage.querySelector('.popup__close');
 const closePopupProfile = popupProfile.querySelector('.popup__close');
 const closePopupButtonAddCard = popupAddCard.querySelector('.popup__close');
 
-
-
-
-initialCards.forEach(function (element) {
-  createCard(element);
-});
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_active'
+};
 
 function initProfilePopup() {
 
@@ -59,6 +60,8 @@ function openPopup(popup) {
   document.addEventListener('keydown', closePopupPressEsc);
 }
 
+export {openPopup}
+
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupPressEsc);
@@ -85,10 +88,9 @@ function initAddCard() {
   const popupFormAddCard = popupAddCard.querySelector('.popup__form');
   const inputNameAddCard = popupAddCard.querySelector('.popup__input_text_name-place');
   const inputLinkAddCard = popupAddCard.querySelector('.popup__input_text_image-link');
-  const formButton = popupAddCard.querySelector('.popup__submit');
 
   openPopupButtonAddCard.addEventListener('click', function() {
-    disableButton(formButton, validationConfig);
+    newCardValidation.disableButton();
     openPopup(popupAddCard);
   });
 
@@ -115,48 +117,23 @@ closePopupButtonAddCard.addEventListener('click', function() {
   closePopup(popupAddCard);
 });
 
-function renderCard(element) {
-  const cardElement = cardTemplate.querySelector('.places__item').cloneNode(true);
-
-  const deleteButton = cardElement.querySelector('.places__delete-card');
-  const likeButton = cardElement.querySelector('.places__like');
-  const imageCard = cardElement.querySelector('.places__image-container');
-
-  cardElement.querySelector('.places__image').src = element.link;
-  cardElement.querySelector('.places__image').alt = element.name;
-  cardElement.querySelector('.places__text').textContent = element.name;
-
-  deleteButton.addEventListener('click', function () {
-    deleteCard(cardElement);
-  });
-
-  likeButton.addEventListener('click', function () {
-    toggleLike(likeButton);
-  });
-
-  imageCard.addEventListener('click', function() {
-    elementFullImage.src = element.link;
-    elementFullImage.alt = element.name;
-    elementFullImageTitle.textContent = element.name;
-
-    openPopup(popupFullImage);
-  });
-
-  return cardElement;
-}
-
 closeImage.addEventListener('click', function() {
   closePopup(popupFullImage);
 });
+
+const renderCard = (initialCards) => {
+  const card = new Card(initialCards, '#card');
+  const generatedCard = card.generateCard();
+  return generatedCard;
+};
+
+initialCards.forEach(element => createCard(element));
 
 function createCard(element) {
   placesList.prepend(renderCard(element));
 }
 
-function deleteCard(elem) {
-  elem.remove();
-}
-
-function toggleLike(elem) {
-  elem.classList.toggle('places__like_active');
-}
+const profileValidation = new FormValidator(validationConfig, popupProfile);
+const newCardValidation = new FormValidator(validationConfig, popupAddCard);
+profileValidation.enableValidation();
+newCardValidation.enableValidation();
