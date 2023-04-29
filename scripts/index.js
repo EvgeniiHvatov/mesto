@@ -1,5 +1,5 @@
 import {initialCards} from './initialCards.js';
-import Card from '/Card.js';
+import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 const profile = document.querySelector('.profile');
