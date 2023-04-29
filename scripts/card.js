@@ -5,7 +5,7 @@ const elementFullImage = popupFullImage.querySelector('.popup__image');
 const elementFullImageTitle = popupFullImage.querySelector('.popup__heading');
 
 export default class Card {
-  constructor(data, cardSelector){
+  constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
@@ -49,7 +49,6 @@ export default class Card {
 
     this._cardElement.querySelector('.places__delete-card').addEventListener('click', evt => {
       this._cardElement.remove();
-      this._cardElement = null;
     });
   }
 
