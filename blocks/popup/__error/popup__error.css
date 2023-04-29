@@ -4,7 +4,11 @@
   line-height: 1.21;
   overflow-wrap: break-word;
   color: #FF0000;
-  padding-top: 5px;
+  padding-top: 0;
+  min-height: 30px;
 }
 
+.popup__error:last-of-type {
+  margin-bottom: 18px;
+}
 

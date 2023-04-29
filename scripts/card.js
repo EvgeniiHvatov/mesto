@@ -49,6 +49,7 @@ export default class Card {
 
     this._cardElement.querySelector('.places__delete-card').addEventListener('click', evt => {
       this._cardElement.remove();
+      this._cardElement = null;
     });
   }
 
@@ -56,9 +57,9 @@ export default class Card {
     this._likeButton.classList.toggle('places__like_active');
   }
 
-  _addDataPopupFullImg = (name, link) => {
-    elementFullImageTitle.textContent = name;
-    elementFullImage.src = link;
-    elementFullImage.alt = name;
+  _addDataPopupFullImg = () => {
+    elementFullImageTitle.textContent = this._name;
+    elementFullImage.src = this._link;
+    elementFullImage.alt = this._name;
   }
 }
