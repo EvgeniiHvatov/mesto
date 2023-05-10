@@ -1,13 +1,27 @@
-import {initialCards} from './initialCards.js';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
+import {initialCards} from '../utils/initialCards.js';
 
-const profile = document.querySelector('.profile');
-const openPopupButton = profile.querySelector('.profile__edit-button');
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import Section from '../components/Section.js';
+import UserInfo from '../components/UserInfo.js';
 
-const profileTitle = profile.querySelector('.profile__title');
-const profileSubtitle = profile.querySelector('.profile__subtitle');
-const placesList = document.querySelector('.places__list');
+import {
+  profile,
+  openPopupButton,
+  profileTitle,
+  profileSubtitle,
+  placesList,
+  validationConfig
+} from '../utils/constants.js';
+
+//const profile = document.querySelector('.profile');
+//const openPopupButton = profile.querySelector('.profile__edit-button');
+
+//const profileTitle = profile.querySelector('.profile__title');
+//const profileSubtitle = profile.querySelector('.profile__subtitle');
+//const placesList = document.querySelector('.places__list');
 
 const popupFullImage = document.querySelector('.popup_full-image');
 const popupProfile = document.querySelector('.popup_edit-profile');
@@ -17,14 +31,14 @@ const closeImage = popupFullImage.querySelector('.popup__close');
 const closePopupProfile = popupProfile.querySelector('.popup__close');
 const closePopupButtonAddCard = popupAddCard.querySelector('.popup__close');
 
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_active'
-};
+// const validationConfig = {
+//   formSelector: '.popup__form',
+//   inputSelector: '.popup__input',
+//   submitButtonSelector: '.popup__submit',
+//   inactiveButtonClass: 'popup__submit_disabled',
+//   inputErrorClass: 'popup__input_type_error',
+//   errorClass: 'popup__error_active'
+// };
 
 function initProfilePopup() {
 

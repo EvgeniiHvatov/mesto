@@ -1,4 +1,4 @@
-import {openPopup} from './index.js';
+import {openPopup} from '../pages/index.js';
 
 const popupFullImage = document.querySelector('.popup_full-image');
 const elementFullImage = popupFullImage.querySelector('.popup__image');
