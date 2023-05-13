@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/pages/index.css">
+  <!-- <link rel="stylesheet" href="./src/pages/index.css"> -->
   <title>Место Россия</title>
 </head>
   <body class="page">
@@ -13,7 +13,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img src="./src/images/avatar.jpg" alt="Ваше фото (аватарка)" class="profile__avatar">
+        <img src="<%=require('./images/avatar.jpg')%>" alt="Ваше фото (аватарка)" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -73,6 +73,6 @@
         <h2 class="popup__heading popup__heading_caption"></h2>
       </div>
     </div>
-    <script type="module" src="./src/pages/index.js"></script>
+    <!-- <script type="module" src="./src/pages/index.js"></script> -->
   </body>
 </html>
