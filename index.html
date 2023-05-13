@@ -13,7 +13,7 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img src="./images/avatar.jpg" alt="Ваше фото (аватарка)" class="profile__avatar">
+        <img src="./src/images/avatar.jpg" alt="Ваше фото (аватарка)" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -58,9 +58,9 @@
         <button type="button" class="popup__close"></button>
         <h2 class="popup__heading">Новое место</h2>
         <form class="popup__form" name="add-card" novalidate>
-          <input class="popup__input popup__input_text_name-place" id="nameplace" name="nameplace" placeholder="Название" type="text" required minlength="2" maxlength="30">
+          <input class="popup__input popup__input_text_name-place" id="nameplace" name="name" placeholder="Название" type="text" required minlength="2" maxlength="30">
           <span class="popup__error" id="nameplace-error"></span>
-          <input class="popup__input popup__input_text_image-link" id="imagelink" name="imagelink" placeholder="Ссылка на картинку" required type="url">
+          <input class="popup__input popup__input_text_image-link" id="imagelink" name="link" placeholder="Ссылка на картинку" required type="url">
           <span class="popup__error" id="imagelink-error"></span>
           <button class="popup__submit popup__submit_disabled" type="submit">Создать</button>
         </form>

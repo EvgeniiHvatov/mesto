@@ -1,24 +1,17 @@
-import {openPopup} from '../pages/index.js';
-
-const popupFullImage = document.querySelector('.popup_full-image');
-const elementFullImage = popupFullImage.querySelector('.popup__image');
-const elementFullImageTitle = popupFullImage.querySelector('.popup__heading');
-
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
-    const cardElement = document
+    return document
       .querySelector(this._cardSelector)
       .content
       .querySelector('.places__item')
       .cloneNode(true);
-
-    return cardElement;
   }
 
   generateCard() {
@@ -39,8 +32,7 @@ export default class Card {
 
   _setEventListeners() {
     this._cardElementContainer.addEventListener('click', () => {
-      this._addDataPopupFullImg(this._name, this._link);
-      openPopup(popupFullImage);
+      this._handleCardClick();
     });
 
     this._likeButton.addEventListener('click', () => {
@@ -55,11 +47,5 @@ export default class Card {
 
   _handleLikeButton() {
     this._likeButton.classList.toggle('places__like_active');
-  }
-
-  _addDataPopupFullImg = () => {
-    elementFullImageTitle.textContent = this._name;
-    elementFullImage.src = this._link;
-    elementFullImage.alt = this._name;
   }
 }
