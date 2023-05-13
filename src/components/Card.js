@@ -39,13 +39,15 @@ export default class Card {
       this._handleLikeButton();
     });
 
-    this._cardElement.querySelector('.places__delete-card').addEventListener('click', evt => {
-      this._cardElement.remove();
-      this._cardElement = null;
-    });
+    this._cardElement.querySelector('.places__delete-card').addEventListener('click', () => this._deleteCard());
   }
 
   _handleLikeButton() {
     this._likeButton.classList.toggle('places__like_active');
+  }
+
+  _deleteCard () {
+    this._cardElement.remove();
+    this._cardElement = null;
   }
 }
