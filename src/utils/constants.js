@@ -4,6 +4,8 @@ export const popupProfile = '.popup_edit-profile';
 export const profileTitle = '.profile__title';
 export const profileSubtitle = '.profile__subtitle';
 export const placesList = '.places__list';
+export const profileAvatar ='.profile__avatar';
+export const avatarEditButton = '.profile__avatar-button';
 
 export const popupConfirmationSelector ='.popup_confirmation';
 export const popupAddCard = '.popup_add-card';

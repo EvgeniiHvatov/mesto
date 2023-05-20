@@ -23,7 +23,9 @@ import {
   inputText,
   inputAbout,
   openPopupButtonAddCard,
-  popupConfirmationSelector
+  popupConfirmationSelector,
+  avatarEditButton,
+  profileAvatar
 } from '../utils/constants.js';
 
 const popupCardFormElement = document.querySelector(popupAddCard);
