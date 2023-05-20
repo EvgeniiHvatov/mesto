@@ -46,6 +46,14 @@ const api = new Api({
   }
 });
 
+api.getDataFromServer().then((responses) => {
+  const [initialCards, userData] = responses;
+  userInfo.setUserInfo({firstname: userData.firstname, about: userData.about, userAvatar: userData.avatar, userId: userData._id});
+  renderCards.renderItems(initialCards);
+}).catch((err) => {
+  console.error(err);
+});
+
 
 /* отрисовать cards */
 
