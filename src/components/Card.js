@@ -4,6 +4,7 @@ export default class Card {
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
+    //this._handleRemoveButton = handleRemoveButton;
   }
 
   _getTemplate() {
@@ -40,6 +41,14 @@ export default class Card {
     });
 
     this._cardElement.querySelector('.places__delete-card').addEventListener('click', () => this._deleteCard());
+    // if (!this._isUserCard) {
+    //   this._cardDelButton.remove();
+    //   this._cardDelButton = null;
+    // } else {
+    //   this._cardElement.querySelector('.card__del-button').addEventListener('click', (event) => {
+    //     this._handleRemoveButton(event);
+    //   });
+    // }
   }
 
   _handleLikeButton() {

@@ -5,6 +5,7 @@ export const profileTitle = '.profile__title';
 export const profileSubtitle = '.profile__subtitle';
 export const placesList = '.places__list';
 
+export const popupConfirmationSelector ='.popup_confirmation';
 export const popupAddCard = '.popup_add-card';
 export const openPopupButtonAddCard = '.profile__add-button';
 export const popupFullImage = '.popup_full-image';

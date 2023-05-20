@@ -7,6 +7,7 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
+import PopupWithConfirmation from '../components/PopupWithConfirmation';
 import {
   profileSelector,
   openPopupButton,
@@ -21,6 +22,7 @@ import {
   inputText,
   inputAbout,
   openPopupButtonAddCard,
+  popupConfirmationSelector
 } from '../utils/constants.js';
 
 const popupCardFormElement = document.querySelector(popupAddCard);
@@ -90,3 +92,7 @@ const profileValidation = new FormValidator(validationConfig, popupProfileFormEl
 const newCardValidation = new FormValidator(validationConfig, popupCardFormElement);
 profileValidation.enableValidation();
 newCardValidation.enableValidation();
+
+
+const popupWithConfirmation = new PopupWithConfirmation(popupConfirmationSelector);
+popupWithConfirmation.setEventListeners();
