@@ -1,5 +1,6 @@
 import './index.css';
 
+import Api from '../components/Api.js';
 import {initialCards} from '../utils/initialCards.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
@@ -7,7 +8,7 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
-import PopupWithConfirmation from '../components/PopupWithConfirmation';
+import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
 import {
   profileSelector,
   openPopupButton,
@@ -34,6 +35,15 @@ const popupProfileFormElement = document.querySelector(popupProfile);
 
 const popupProfileNameElement = popupProfileFormElement.querySelector(inputText);
 const popupProfileAboutElement = popupProfileFormElement.querySelector(inputAbout);
+
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
+  headers: {
+    authorization: 'd7dcd0f2-c4b8-4c41-b858-1f8610d52fd1',
+    'Content-Type': 'application/json'
+  }
+});
+
 
 /* отрисовать cards */
 
