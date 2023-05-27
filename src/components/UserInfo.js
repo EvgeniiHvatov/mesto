@@ -13,14 +13,14 @@ export default class UserInfo {
   }
 
   setUserInfo(userData) {
-    const {firstname, about, userAvatar, userId} = userData;
-    this._profileTitleElement.textContent = firstname;
-    this._profileSubtitleElement.textContent = about;
+    const {userName, userAbout, userAvatar, userId} = userData;
+    this._profileTitleElement.textContent = userName;
+    this._profileSubtitleElement.textContent = userAbout;
     this._profileAvatarElement.src = userAvatar;
     this._userId = userId;
   }
 
-  updateUserInfo({firstname, about}) {
+  changeUserInfo({firstname, about}) {
     this._profileTitleElement.textContent = firstname;
     this._profileSubtitleElement.textContent = about;
   }

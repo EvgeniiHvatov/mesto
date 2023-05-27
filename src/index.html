@@ -13,7 +13,10 @@
     </header>
     <main class="content">
       <section class="profile">
-        <button class="profile__avatar-button" type="button"><img src="<%=require('./images/avatar.jpg')%>" alt="Ваше фото (аватарка)" class="profile__avatar"></button>
+        <div class="profile__container">
+        <button class="profile__avatar-button" type="button"></button>
+        <img src="<%=require('./images/avatar.jpg')%>" alt="Ваше фото (аватарка)" class="profile__avatar">
+        </div>
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -36,7 +39,10 @@
         </div>
         <div class="places__heading">
           <h2 class="places__text"></h2>
-          <button type="button" class="places__like"></button>
+          <div class="places__likes-container">
+            <button type="button" class="places__like"></button>
+            <p class="places__likes-indicator"></p>
+          </div>
         </div>
       </li>
     </template>

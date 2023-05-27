@@ -9,6 +9,7 @@ export const avatarEditButton = '.profile__avatar-button';
 
 export const popupConfirmationSelector ='.popup_confirmation';
 export const popupAddCard = '.popup_add-card';
+export const popupAvatar = '.popup_edit-avatar';
 export const openPopupButtonAddCard = '.profile__add-button';
 export const popupFullImage = '.popup_full-image';
 
