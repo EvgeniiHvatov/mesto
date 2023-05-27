@@ -20,6 +20,8 @@ import {
   popupAddCard,
   popupAvatar,
   cardSelector,
+  inputAbout,
+  inputText,
   validationConfig,
   openPopupButtonAddCard,
   popupConfirmationSelector,
@@ -36,6 +38,8 @@ const avatarEditButtonElement = document.querySelector(avatarEditButton);
 
 const popupProfileFormElement = document.querySelector(popupProfile);
 const popupAvatarFormElement = document.querySelector(popupAvatar);
+const popupProfileNameElement = popupProfileFormElement.querySelector(inputText);
+const popupProfileAboutElement = popupProfileFormElement.querySelector(inputAbout);
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
@@ -118,7 +122,7 @@ const userInfo = new UserInfo({profileTitle, profileSubtitle, profileAvatar});
 const popupWithProfileForm = new PopupWithForm(popupProfile, (formData) => {
   popupWithProfileForm.renderLoading(true);
   api.updateUserInfo({name: formData.firstname, about: formData.about}).then((data) => {
-    userInfo.changeUserInfo({firstname: data.name, about: data.about});
+    userInfo.changeUserInfo({userName: data.name, userAbout: data.about});
     popupWithProfileForm.close();
   })
   .catch((err) => {
@@ -136,7 +140,9 @@ profileValidation.enableValidation();
 
 
 profileEditButtonElement.addEventListener('click', () => {
-  userInfo.getUserInfo();
+  const {about, firstname} = userInfo.getUserInfo();
+  popupProfileNameElement.value = firstname;
+  popupProfileAboutElement.value = about;
   profileValidation.disableButton();
   popupWithProfileForm.open();
 });
@@ -145,7 +151,7 @@ const popupUpdateAvatar = new PopupWithForm(popupAvatar, (formData) => {
   popupUpdateAvatar.renderLoading(true);
   api.updateProfileAvatar({avatar: formData.url})
   .then((data) => {
-    userInfo.setUserAvatar({newAvatar: data.avatar});
+    userInfo.setUserAvatar({userAvatar: data.avatar});
     popupUpdateAvatar.close();
   })
   .catch((err) => {
